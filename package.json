@@ -1,0 +1,15 @@
+{
+  "name": "port2020",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile-scss": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 base.scss dist/base.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "base.css",
+	"sources": [
+		"../base.scss"
+	],
+	"sourcesContent": [
+		"* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: sans-serif;\n}\n\n\nbody {\n  .wrapper {\n    display: grid;\n    grid-template-columns: 1fr 1400px 1fr;\n    grid-template-areas: ' . content .';\n\n    .content {\n      grid-area: content;\n      text-align: center;\n      padding-top: 200px;\n    }\n  }\n}\n"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,CAAC,CAAC;EACA,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;EACtB,WAAW,EAAE,UAAU;CACxB;;AAGD,AACE,IADE,CACF,QAAQ,CAAC;EACP,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,cAAc;EACrC,mBAAmB,EAAE,cAAc;CAOpC;;AAXH,AAMI,IANA,CACF,QAAQ,CAKN,QAAQ,CAAC;EACP,SAAS,EAAE,OAAO;EAClB,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,KAAK;CACnB"
+}
