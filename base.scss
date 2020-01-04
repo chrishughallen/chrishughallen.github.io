@@ -9,8 +9,13 @@
 body {
   .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1400px 1fr;
+    grid-template-columns: 1fr auto 1fr;
     grid-template-areas: ' . content .';
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-areas: 'content';
+    }
 
     .content {
       grid-area: content;
