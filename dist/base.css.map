@@ -5,8 +5,8 @@
 		"../base.scss"
 	],
 	"sourcesContent": [
-		"* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: sans-serif;\n}\n\n\nbody {\n  .wrapper {\n    display: grid;\n    grid-template-columns: 1fr 1400px 1fr;\n    grid-template-areas: ' . content .';\n\n    .content {\n      grid-area: content;\n      text-align: center;\n      padding-top: 200px;\n    }\n  }\n}\n"
+		"* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: sans-serif;\n}\n\n\nbody {\n  .wrapper {\n    display: grid;\n    grid-template-columns: 1fr auto 1fr;\n    grid-template-areas: ' . content .';\n\n    @media screen and (max-width: 768px) {\n      grid-template-columns: 1fr;\n      grid-template-areas: 'content';\n    }\n\n    .content {\n      grid-area: content;\n      text-align: center;\n      padding-top: 200px;\n    }\n  }\n}\n"
 	],
 	"names": [],
-	"mappings": "AAAA,AAAA,CAAC,CAAC;EACA,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;EACtB,WAAW,EAAE,UAAU;CACxB;;AAGD,AACE,IADE,CACF,QAAQ,CAAC;EACP,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,cAAc;EACrC,mBAAmB,EAAE,cAAc;CAOpC;;AAXH,AAMI,IANA,CACF,QAAQ,CAKN,QAAQ,CAAC;EACP,SAAS,EAAE,OAAO;EAClB,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,KAAK;CACnB"
+	"mappings": "AAAA,AAAA,CAAC,CAAC;EACA,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;EACtB,WAAW,EAAE,UAAU;CACxB;;AAGD,AACE,IADE,CACF,QAAQ,CAAC;EACP,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,YAAY;EACnC,mBAAmB,EAAE,cAAc;CAYpC;;AAVC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EANvC,AACE,IADE,CACF,QAAQ,CAAC;IAML,qBAAqB,EAAE,GAAG;IAC1B,mBAAmB,EAAE,SAAS;GAQjC;;;AAhBH,AAWI,IAXA,CACF,QAAQ,CAUN,QAAQ,CAAC;EACP,SAAS,EAAE,OAAO;EAClB,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,KAAK;CACnB"
 }
