@@ -153,6 +153,13 @@ body .wrapper .content .secondary-paragraph {
   opacity: 0.6;
 }
 
+@media screen and (min-width: 768px) {
+  body .wrapper .content .secondary-paragraph {
+    padding: 25px 150px 0px 150px;
+    text-align: justify;
+  }
+}
+
 body .wrapper .content .intro-joke {
   -webkit-animation: 3s ease 0s normal forwards 1 fadein;
   animation: 3s ease 0s normal forwards 1 fadein;
