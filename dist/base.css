@@ -147,6 +147,12 @@ body .wrapper .content .intro-paragraph {
   }
 }
 
+body .wrapper .content .secondary-paragraph {
+  padding-top: 25px;
+  text-align: left;
+  opacity: 0.6;
+}
+
 body .wrapper .content .intro-joke {
   -webkit-animation: 3s ease 0s normal forwards 1 fadein;
   animation: 3s ease 0s normal forwards 1 fadein;
