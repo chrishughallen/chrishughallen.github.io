@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* GRID STYLES */
+main {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  margin-top: 3rem;
+}
+
+/* intro section */
+main article {
+  margin-top: 5rem;
+  grid-column: 2;
+}
+
+main article h1 {
+  font-size: clamp(45px, 10vw, 120px);
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+main article h2 {
+  font-size: clamp(40px, 8vw, 100px);
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+main article h3 {
+  font-size: clamp(35px, 6vw, 80px);
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+main section {
+  grid-column: 2;
+  max-width: 80%;
+  margin: 3rem auto 0 auto;
+  text-align: center;
+}
+
+main section p {
+  padding: 5px 0;
+  font-size: 20px;
+}
+
+@media(max-width: 767px) {
+  main section p {
+    font-size: 18px;
+  }
+
+  main {
+    margin-top: 0;
+    grid-template-columns: 30px 1fr 30px;
+  }
+
+  main article {
+    margin-top: 2.5rem;
+  }
+}
+

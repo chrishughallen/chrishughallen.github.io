@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/nav.css">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/buttons.css">
+  <link rel="stylesheet" href="../styles/todo.css">
+  <title>Chris Allen | Work</title>
+</head>
+<body>
+  <nav id="nav" class="hide">
+    <button id="close-nav" class="icon close-nav">
+      <i class="fa fa-solid fa-arrow-left"></i>
+    </button>
+    <ul>
+      <li><a href="../index.html">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li class="active-nav-link"><a href="work.html">work</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <button id="open-nav" class="icon open-nav"><i class="fa fa-solid fa-bars"></i></button>
+  </header>
+
+  <main>
+    <article>
+      <h1>Todo list!</h1>
+
+      <section class="todo">
+        <div class="form">
+          <input id="todo-input" type="text">
+          <button id="add-btn" class="add-todo">add</button>
+      </div>
+      </section>
+      <section class="todo-list">
+        <ul id="todo-list"></ul>
+      </section>
+    </article>
+  </main>
+
+  <script src="https://kit.fontawesome.com/b2f7c419d3.js" crossorigin="anonymous"></script>
+  <script src="../javascript/nav.js"></script>
+  <script src="/javascript/main.js"></script>
+  <script src="/javascript/todo.js"></script>
+</body>
+</html>

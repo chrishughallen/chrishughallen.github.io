@@ -1,0 +1,63 @@
+section.todo {
+
+}
+
+section.todo div.form {
+  display: flex;
+  width: 100%;
+}
+
+section.todo button.add-todo {
+  background: green;
+  color: white;
+  outline: none;
+  padding: 0.8rem;
+  border: 1px solid green;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: none;
+}
+
+section.todo div.form input {
+  padding: 0.8rem;
+  border-right: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid black;
+  border-right: none;
+  width: 100%;
+}
+
+section.todo div.form input:focus {
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+section.todo-list li {
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+section.todo-list li button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+section.todo-list li button:hover {
+  cursor: pointer;
+}
+
+section.todo-list li span:hover {
+  cursor: pointer; 
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: rgba(0,0,0,0.3);
+}
