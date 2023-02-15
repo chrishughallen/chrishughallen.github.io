@@ -303,11 +303,22 @@ function stay() {
 // handle players play after hit or stay btn is clicked
 function playerPlay(playerHand) {
   updatePlayerDisplay(playerHand)
-  if(playerHand.getTotal() == 21) {
-    stay()
-  } else if(playerHand.getTotal() > 21) {
+  if(playerHand.getTotal() > 21) {
     determineWinner(dealerHand, playerHand)
   }
+  // if(playerHand.getTotal() == 21) {
+  //   stay()
+  // } else if(playerHand.getTotal() > 21) {
+  //   determineWinner(dealerHand, playerHand)
+  // }
+}
+
+// update players displayed cards
+function updatePlayerDisplay(playerHand) {
+  playerHandDisplay.innerHTML = ""
+  playerHand.cards.forEach(card => {
+    playerHandDisplay.appendChild(getCardImg(card.img))
+  })
 }
 
 // handle dealer play
@@ -319,15 +330,6 @@ function dealerPlay(dealerHand) {
     determineWinner(dealerHand, playerHand)
   }
 }
-
-// update players displayed cards
-function updatePlayerDisplay(playerHand) {
-  playerHandDisplay.innerHTML = ""
-  playerHand.cards.forEach(card => {
-    playerHandDisplay.appendChild(getCardImg(card.img))
-  })
-}
-
 // update dealers displayed cards
 function updateDealerDisplay(initial, dealerHand) {
   dealerHandDisplay.innerHTML = ""
@@ -345,22 +347,24 @@ function updateDealerDisplay(initial, dealerHand) {
 
 // Determine who won / busted
 function determineWinner(dealerHand, playerHand) {
-  if(playerHand.getTotal() > 21) {
-    playerOutcome.innerHTML = "bust"
-    dealerOutcome.innerHTML = "win!"
-  } else if(dealerHand.getTotal() > 21) {
-    dealerOutcome.innerHTML = "bust!"
-    playerOutcome.innerHTML = "win!"
-  } else if(playerHand.getTotal() == dealerHand.getTotal()) {
-    dealerOutcome.innerHTML = "push!"
-    playerOutcome.innerHTML = "push!"
-  } else if(playerHand.getTotal() > dealerHand.getTotal()) {
-    dealerOutcome.innerHTML = "lose!"
-    playerOutcome.innerHTML = "win!"
-  } else {
-    dealerOutcome.innerHTML = "win!"
-    playerOutcome.innerHTML = "lose!"
-  }
+  console.log(dealerHand.getTotal())
+  console.log(playerHand.getTotal())
+  // if(playerHand.getTotal() > 21) {
+  //   playerOutcome.innerHTML = "bust"
+  //   dealerOutcome.innerHTML = "win!"
+  // } else if(dealerHand.getTotal() > 21) {
+  //   dealerOutcome.innerHTML = "bust!"
+  //   playerOutcome.innerHTML = "win!"
+  // } else if(playerHand.getTotal() == dealerHand.getTotal()) {
+  //   dealerOutcome.innerHTML = "push!"
+  //   playerOutcome.innerHTML = "push!"
+  // } else if(playerHand.getTotal() > dealerHand.getTotal()) {
+  //   dealerOutcome.innerHTML = "lose!"
+  //   playerOutcome.innerHTML = "win!"
+  // } else {
+  //   dealerOutcome.innerHTML = "win!"
+  //   playerOutcome.innerHTML = "lose!"
+  // }
   updateOptions()
 }
 
