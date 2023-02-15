@@ -44,6 +44,17 @@ article.blackjack section div div.hand {
   grid-template-columns: repeat(7, 15px);
 }
 
+@media(min-width: 767px) {
+  article.blackjack section {
+    flex-direction: column;
+  }
+
+  .hand img {
+    max-width: 6rem;
+  }
+}
+
 .hand img {
   max-height: 10rem;
 }
+
