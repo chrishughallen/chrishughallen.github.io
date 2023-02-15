@@ -1,0 +1,49 @@
+article.blackjack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article.blackjack div.game-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+article.blackjack button.deal-button.hidden,
+article.blackjack button.hit-button.hidden,
+article.blackjack button.stay-button.hidden {
+  display: none;
+}
+
+article.blackjack section {
+  align-self: center;
+  justify-self: center;
+  gap: 3rem;
+}
+
+article.blackjack section {
+  display: flex;
+  justify-content: space-between
+}
+
+article.blackjack section div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+article.blackjack section div h1 {
+  font-size: 1.25rem;
+}
+
+article.blackjack section div div.hand {
+  display:  grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(7, 15px);
+}
+
+.hand img {
+  max-height: 10rem;
+}
