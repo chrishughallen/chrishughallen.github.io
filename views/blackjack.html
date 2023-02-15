@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="../styles/nav.css">
   <link rel="stylesheet" href="../styles/style.css">
   <link rel="stylesheet" href="../styles/buttons.css">
-  <title>Chris Allen | Work</title>
+  <link rel="stylesheet" href="../styles/blackjack.css">
+  <title>Chris Allen | BlackJack</title>
 </head>
 <body>
   <nav id="nav" class="hide">
@@ -27,16 +28,35 @@
   </header>
 
   <main>
-    <article>
-      <h1>Work!</h1>
-      <a href="todo.html">TODO</a>
-      <br>
-      <a href="blackjack.html">Blackjack</a>
+    <article class="blackjack">
+      <h1>BlackJack!</h1>
+      <div class="game-options">
+        <button id="deal" class="deal-button">deal</button>
+        <button id="hit" class="deal-button hidden">hit</button>
+        <button id="stay" class="stay-button hidden">stay</button>
+      </div>
+      <section>
+        <div>
+          <h4>Dealer</h4>
+          <div class="hand" id="dealer-hand-display">
+          </div>
+          <p id="dealer-outcome"></p>
+        </div>
+
+        <div>
+          <h4>Player</h4>
+          <div class="hand" id="player-hand-display">
+          </div>
+          <p id="player-outcome"></p>
+        </div>
+      </section>
     </article>
+
   </main>
 
   <script src="https://kit.fontawesome.com/b2f7c419d3.js" crossorigin="anonymous"></script>
   <script src="../javascript/nav.js"></script>
-  <script  src="/javascript/main.js"></script>
+  <script src="/javascript/main.js"></script>
+  <script src="../javascript/blackjack.js"></script>
 </body>
 </html>
