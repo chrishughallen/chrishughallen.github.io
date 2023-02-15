@@ -1,30 +1,37 @@
-section.todo {
+.todo-list-status {
+  opacity: 0.7;
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
 
+section.todo {
+  margin: 0;
+  max-width: 100%;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 1rem;
 }
 
 section.todo div.form {
   display: flex;
   width: 100%;
+  border-bottom: 1px solid black;
 }
 
 section.todo button.add-todo {
-  background: green;
-  color: white;
+  background: transparent;
+  border: none;
   outline: none;
-  padding: 0.8rem;
-  border: 1px solid green;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-left: none;
+}
+
+section.todo button.add-todo:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 section.todo div.form input {
-  padding: 0.8rem;
-  border-right: none;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border: 1px solid black;
-  border-right: none;
+  padding: 0.8rem 0.8rem 0.8rem 0;
+  border: none;
   width: 100%;
 }
 
@@ -36,25 +43,40 @@ ul {
   list-style: none;
 }
 
-section.todo-list li {
+div.todo-list li {
   width: 100%;
   padding: 1rem 0;
   display: flex;
   justify-content: space-between;
+  gap: 0.75rem;
 }
 
-section.todo-list li button {
-  border: none;
-  outline: none;
-  background: none;
+div.todo-list li input {
+  /* visibility: hidden; */
 }
 
-section.todo-list li button:hover {
+div.todo-list li input:hover {
   cursor: pointer;
 }
 
-section.todo-list li span:hover {
-  cursor: pointer; 
+div.todo-list li span {
+  width: 100%;
+  text-align: left;
+}
+
+div.todo-list li button {
+  border: none;
+  outline: none;
+  background: none;
+  display: none;
+}
+
+div.todo-list li:hover button {
+  display: initial;
+}
+
+div.todo-list li button:hover {
+  cursor: pointer;
 }
 
 li.completed span {
