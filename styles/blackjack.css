@@ -30,7 +30,6 @@ article.blackjack div.game-options {
   display: flex;
   justify-content: space-between;
   margin: 3rem 0;
-  gap: 3rem;
 }
 
 article.blackjack div.game-options button {
@@ -53,7 +52,10 @@ article.blackjack section.table {
   flex-direction: column;
   justify-content: space-between;
   margin: 0;
-  gap: 5rem;
+}
+
+article.blackjack section.table .table-section {
+  margin: 1.5rem 0;
 }
 
 
@@ -88,6 +90,26 @@ article.blackjack section.table div.hand {
   grid-gap: 0.5rem;
   grid-template-columns: repeat(7, 15px);
 }
+
+article.blackjack section.table div.player-chips {
+  display: flex;
+  justify-content: space-between;
+}
+
+article.blackjack section.table div.player-chips button {
+  padding: 1.25rem;
+  border-radius: 50%;
+  outline: none;
+  border: 2px solid white;
+  color: white;
+  height: 3.5rem;
+  width: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.75rem;
+}
+
 
 @media(max-width: 767px) {
   article.blackjack h1 {
