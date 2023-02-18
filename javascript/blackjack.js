@@ -209,20 +209,57 @@ const cards = [
   }
 ]
 const cardBack = "../assets/images/cards/card_back.png"
+
+const chips = [
+  {
+    img: "chip_img.png",
+    count: 5,
+    value: 1,
+    color: "blue"
+  },
+  {
+    img: "chip_img.png",
+    count: 5,
+    value: 5,
+    color: "red"
+  },
+  {
+    img: "chip_img.png",
+    count: 5,
+    value: 10,
+    color: "green"
+  },
+  {
+    img: "chip_img.png",
+    count: 5,
+    value: 25,
+    color: "orange"
+  }
+]
+
+
+
 const playerHandDisplay = document.getElementById("player-hand-display")
 const dealerHandDisplay = document.getElementById("dealer-hand-display")
 const playerTotalDisplay = document.getElementById("player-total-display")
 const dealerTotalDisplay = document.getElementById("dealer-total-display")
+
 const dealBtn = document.getElementById("deal")
 const hitBtn = document.getElementById('hit')
 const stayBtn = document.getElementById('stay')
+
+const playerChipsArea = document.getElementById("player-chips")
+const playerChipsTotal = document.getElementById("player-chips-total")
+const betDisplay = document.getElementById("current-bet")
 
 dealBtn.addEventListener("click", deal)
 hitBtn.addEventListener("click", hit)
 stayBtn.addEventListener("click", stay)
 
+let currentBet = parseInt(betDisplay.innerHTML)
 let dealerHand
 let playerHand
+let playerChips = chips
 
 // Hand object has an array of cards, and a getTotal method
 class Hand {
@@ -264,7 +301,11 @@ function getCard() {
 }
 
 // assign new Hand object to player and dealer
-function deal() {
+function deal(e) {
+  renderPlayerChips(playerChips)
+  if(currentBet == 0) {
+    return
+  }
   resetDisplay()
   dealerHand = new Hand([getCard(), getCard()])
   playerHand = new Hand([getCard(), getCard()])
@@ -355,14 +396,18 @@ function updateDealerDisplay(initial, dealerHand) {
 function determineWinner(dealerHand, playerHand) {
   if(playerHand.getTotal() > 21) {
     playerTotalDisplay.innerHTML = "bust"
+    payHouse(currentBet)
   } else if(dealerHand.getTotal() > 21) {
+    payOutPlayer(currentBet)
     playerTotalDisplay.innerHTML = "win!"
   } else if(playerHand.getTotal() == dealerHand.getTotal()) {
     playerTotalDisplay.innerHTML = "push!"
   } else if(playerHand.getTotal() > dealerHand.getTotal()) {
     playerTotalDisplay.innerHTML = "win!"
+    payOutPlayer(currentBet)
   } else {
     playerTotalDisplay.innerHTML = "lose!"
+    payHouse(currentBet)
   }
   updateOptions()
 }
@@ -372,4 +417,87 @@ function getCardImg(image) {
   let img = document.createElement('img')
   img.src = image
   return img
+}
+
+// BETTING CODE
+
+function renderPlayerChips(playerChips) {
+  playerChipsArea.innerHTML = ""
+  updateDisplayedBet(0)
+  playerChips.forEach((chip) => {
+    let chipEl = document.createElement('button')
+    chipEl.innerHTML = chip.value
+    chipEl.style.backgroundColor = chip.color
+    chipEl.addEventListener("click", bet)
+    playerChipsArea.appendChild(chipEl)
+  })
+  playerChipsTotal.innerHTML = `$${getPlayerChipsTotal(playerChips)}`
+  updateDisplayedBet(currentBet)
+}
+
+function updateDisplayedBet(bet) {
+  betDisplay.innerHTML = bet
+}
+
+function getPlayerChipsTotal(playerChips) {
+  let total = 0
+  playerChips.forEach((chip) => total += chip.value * chip.count)
+  return total
+}
+
+function bet(e) {
+  let clickedChipValue = e.currentTarget.innerHTML
+  currentBet += parseInt(clickedChipValue)
+  updateDisplayedBet(currentBet)
+
+  playerChips.forEach((chip) => {
+    if(chip.value == clickedChipValue) {
+      chip.count -= 1
+    }
+  })
+  renderPlayerChips(playerChips)
+} 
+
+function payOutPlayer(bet) {
+  while (bet > 0) {
+    if(bet >= 25) {
+      bet -= 25
+      playerChips[3].count += 2
+    }
+    else if(bet >= 10) {
+      bet -= 10
+      playerChips[2].count += 2
+    }
+    else if(bet >= 5) {
+      bet -= 5
+      playerChips[1].count += 2
+    } else {
+      bet -= 1
+      playerChips[0].count += 2
+    }
+  }
+  currentBet = 0
+  renderPlayerChips(playerChips)
+}
+
+function payHouse(bet) {
+  while (bet > 0) {
+    if(bet >= 25) {
+      bet -= 25
+      playerChips[3].count -= 1
+    }
+    else if(bet >= 10) {
+      bet -= 10
+      playerChips[2].count -= 1
+    }
+    else if(bet >= 5) {
+      bet -= 5
+      playerChips[1].count -= 1
+    } else {
+      bet -= 1
+      playerChips[0].count -= 1
+    }
+  }
+  currentBet = 0
+  renderPlayerChips(playerChips)
 }
