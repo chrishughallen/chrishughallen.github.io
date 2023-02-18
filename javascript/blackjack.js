@@ -210,11 +210,9 @@ const cards = [
 ]
 const cardBack = "../assets/images/cards/card_back.png"
 const playerHandDisplay = document.getElementById("player-hand-display")
-const playerOutcome = document.getElementById("player-outcome")
 const dealerHandDisplay = document.getElementById("dealer-hand-display")
 const playerTotalDisplay = document.getElementById("player-total-display")
 const dealerTotalDisplay = document.getElementById("dealer-total-display")
-const dealerOutcome = document.getElementById("dealer-outcome")
 const dealBtn = document.getElementById("deal")
 const hitBtn = document.getElementById('hit')
 const stayBtn = document.getElementById('stay')
@@ -274,21 +272,19 @@ function deal() {
   updateDealerDisplay(true, dealerHand)
 }
 
-// clears display of outcomes
+// clears display of outcome
 function resetDisplay() {
   updateOptions()
   playerHandDisplay.innerHTML = ''
-  dealerOutcome.innerHTML = ''
-  playerOutcome.innerHTML = ''
   dealerTotalDisplay.innerHTML = ""
   playerTotalDisplay.innerHTML = ""
 }
 
 // toggle display of deal/hit/stay buttons
 function updateOptions() {
-  hitBtn.classList.toggle('hidden')
-  stayBtn.classList.toggle('hidden')
-  dealBtn.classList.toggle('hidden')
+  hitBtn.classList.toggle('disabled')
+  stayBtn.classList.toggle('disabled')
+  dealBtn.classList.toggle('disabled')
 }
 
 // add card to players hand and play
@@ -347,12 +343,6 @@ function updateDealerDisplay(initial, dealerHand) {
   dealerHandDisplay.innerHTML = ""
   // ensures the 2nd card is dealt face down on initial deal
   if (initial) {
-    dealerTotalDisplay.innerHTML = dealerHand.cards[0].value
-    if(dealerHand.cards[0].value == "a") {
-      dealerTotalDisplay.innerHTML = "1/11"
-    } else {
-      dealerTotalDisplay.innerHTML = dealerHand.cards[0].value
-    }
     dealerHandDisplay.appendChild(getCardImg(dealerHand.cards[0].img))
     dealerHandDisplay.appendChild(getCardImg(cardBack))
   } else {
@@ -364,20 +354,15 @@ function updateDealerDisplay(initial, dealerHand) {
 // Determine who won / busted
 function determineWinner(dealerHand, playerHand) {
   if(playerHand.getTotal() > 21) {
-    playerOutcome.innerHTML = "bust"
-    dealerOutcome.innerHTML = "win!"
+    playerTotalDisplay.innerHTML = "bust"
   } else if(dealerHand.getTotal() > 21) {
-    dealerOutcome.innerHTML = "bust!"
-    playerOutcome.innerHTML = "win!"
+    playerTotalDisplay.innerHTML = "win!"
   } else if(playerHand.getTotal() == dealerHand.getTotal()) {
-    dealerOutcome.innerHTML = "push!"
-    playerOutcome.innerHTML = "push!"
+    playerTotalDisplay.innerHTML = "push!"
   } else if(playerHand.getTotal() > dealerHand.getTotal()) {
-    dealerOutcome.innerHTML = "lose!"
-    playerOutcome.innerHTML = "win!"
+    playerTotalDisplay.innerHTML = "win!"
   } else {
-    dealerOutcome.innerHTML = "win!"
-    playerOutcome.innerHTML = "lose!"
+    playerTotalDisplay.innerHTML = "lose!"
   }
   updateOptions()
 }

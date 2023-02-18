@@ -4,59 +4,54 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../styles/nav.css">
-  <link rel="stylesheet" href="../styles/style.css">
   <link rel="stylesheet" href="../styles/buttons.css">
   <link rel="stylesheet" href="../styles/blackjack.css">
   <title>Chris Allen | BlackJack</title>
 </head>
 <body>
-  <nav id="nav" class="hide">
-    <button id="close-nav" class="icon close-nav">
-      <i class="fa fa-solid fa-arrow-left"></i>
-    </button>
-    <ul>
-      <li><a href="../index.html">home</a></li>
-      <li><a href="about.html">about</a></li>
-      <li class="active-nav-link"><a href="work.html">work</a></li>
-      <li><a href="contact.html">contact</a></li>
-    </ul>
-  </nav>
-
   <header>
     <button id="open-nav" class="icon open-nav"><i class="fa fa-solid fa-bars"></i></button>
   </header>
 
   <main>
     <article class="blackjack">
+      
       <h1>BlackJack!</h1>
+      
       <div class="game-options">
         <button id="deal" class="deal-button">deal</button>
-        <button id="hit" class="deal-button hidden">hit</button>
-        <button id="stay" class="stay-button hidden">stay</button>
+        <button id="hit" class="deal-button disabled">hit</button>
+        <button id="stay" class="stay-button disabled">stay</button>
       </div>
-      <section>
-        <div>
-          <h4>Dealer: <span id="dealer-total-display"></span></h4>
-          <div class="hand" id="dealer-hand-display">
+      
+      <section class="table">
+        
+        <div class="table-section">
+          <div class="card-box">
+            <div class="score">
+              <h1>Dealer</h1>
+              <h1 id="dealer-total-display"></h1>
+            </div>
+            <div class="hand" id="dealer-hand-display"></div>
           </div>
-          <p id="dealer-outcome"></p>
         </div>
 
-        <div>
-          <h4>Player: <span id="player-total-display"></span></h4>
-          <div class="hand" id="player-hand-display">
+        <div class="table-section">
+          <div class="card-box">
+            <div class="score">
+              <h1>Player</h1>
+              <h1 id="player-total-display"></h1>
+            </div>
+            <div class="hand" id="player-hand-display"></div>
           </div>
-          <p id="player-outcome"></p>
         </div>
+      
+      
       </section>
     </article>
 
   </main>
 
-  <script src="https://kit.fontawesome.com/b2f7c419d3.js" crossorigin="anonymous"></script>
-  <script src="../javascript/nav.js"></script>
-  <script src="/javascript/main.js"></script>
   <script src="../javascript/blackjack.js"></script>
 </body>
 </html>

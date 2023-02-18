@@ -1,56 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #2a503d !important;
+  color: white;
+  font-family: sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 article.blackjack {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+article.blackjack h1 {
+  font-size: 5rem;
+}
+
 article.blackjack div.game-options {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-}
-
-article.blackjack button.deal-button.hidden,
-article.blackjack button.hit-button.hidden,
-article.blackjack button.stay-button.hidden {
-  display: none;
-}
-
-article.blackjack section {
-  align-self: center;
-  justify-self: center;
+  margin: 3rem 0;
   gap: 3rem;
 }
 
-article.blackjack section {
-  display: flex;
-  justify-content: space-between
+article.blackjack div.game-options button {
+  border: 1px solid white;
+  padding: 1rem;
+  outline: none;
+  background: transparent;
+  color: white;
+  width: 100px;
 }
 
-article.blackjack section div {
+article.blackjack .game-options button.disabled {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.2);
+  pointer-events: none;
+}
+
+article.blackjack section.table {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+  justify-content: space-between;
+  margin: 0;
+  gap: 5rem;
 }
 
-article.blackjack section div h1 {
+
+article.blackjack section.table div.card-box {
+  height: 12rem;
+  width: 30rem;
+  border: 1px solid white;
+  padding: 1rem;
+  position: relative;
+}
+
+article.blackjack section.table div.card-box .score {
+  opacity: 0.4;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  right: 2rem;
+  top: 20%;
+  text-align: center;
+}
+
+article.blackjack section.table div.card-box .score h1 {
+  font-size: 3rem;
+}
+
+article.blackjack section.table div h1 {
   font-size: 1.25rem;
 }
 
-article.blackjack section div div.hand {
+article.blackjack section.table div.hand {
   display:  grid;
   grid-gap: 0.5rem;
   grid-template-columns: repeat(7, 15px);
 }
 
-@media(min-width: 767px) {
-  article.blackjack section {
-    flex-direction: column;
-  }
-
-  .hand img {
-    max-width: 6rem;
+@media(max-width: 767px) {
+  article.blackjack section.table div.card-box {
+    width: 20rem;
   }
 }
 
