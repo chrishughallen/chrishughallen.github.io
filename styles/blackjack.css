@@ -90,8 +90,25 @@ article.blackjack section.table div.hand {
 }
 
 @media(max-width: 767px) {
+  article.blackjack h1 {
+    font-size: 2.5rem;
+  }
+  
+  article.blackjack div.game-options {
+    gap: 1.5rem;
+  }
+
   article.blackjack section.table div.card-box {
     width: 20rem;
+    height: 9rem;
+  }
+
+  article.blackjack section.table div.card-box .hand img {
+    max-height: 7rem;
+  }
+
+  article.blackjack section.table div.card-box .score h1 {
+    font-size: 1.75rem;
   }
 }
 
