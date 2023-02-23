@@ -16,6 +16,11 @@ header.navbar {
 a {
   color: #64ffda;
 }
+
+header.navbar button {
+  display: none;
+}
+
 header.navbar h1 a {
   text-decoration: none;
   transition: opacity 100ms;
@@ -24,10 +29,6 @@ header.navbar h1 a {
 header.navbar h1 a:hover {
   opacity: 0.7;
   transition: opacity 100ms;
-}
-
-header.navbar button {
-  display: none;
 }
 
 header.navbar nav ul {
@@ -58,9 +59,45 @@ header.navbar nav ul li a:hover {
   text-decoration: underline;
 }
 
+
+
+
+
+
+/* MOBILE NAVBAR STYLES */
+@media(max-width: 768px) {
+  .navbar nav {
+    display: none;
+    background: var(--dark-blue);
+  }
+
+  .navbar .close-nav {
+    display: none;
+  }
+
+  .navbar .open-nav {
+    display: initial;
+  }
+
+  header.navbar.show-mobile-nav {
+    height: 100vh;
+  }
+
+  .show-mobile-nav nav {
+    display: initial;
+  }
+
+  .show-mobile-nav .close-nav {
+    display: initial;
+  }
+
+  .show-mobile-nav .open-nav {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   header.navbar {
-    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 5vh auto;
@@ -79,10 +116,6 @@ header.navbar nav ul li a:hover {
     height: 5rem;
     grid-template-rows: 1fr;
     transition: height 100ms;
-  }
-
-  header.hide-mobile-content nav {
-    display: none;
   }
 
   header.navbar h1 {
@@ -125,16 +158,8 @@ header.navbar nav ul li a:hover {
     grid-template-columns: 1fr 1fr;
   }
 
-  header.navbar .open-nav {
-    display: none;
-  }
-
   header.hide-mobile-content .close-nav {
     display: none;
-  }
-
-  header.hide-mobile-content .open-nav {
-    display: initial;
   }
   
   header.navbar button {
@@ -145,10 +170,6 @@ header.navbar nav ul li a:hover {
     transition: opacity 100ms;
     opacity: 0.7;
     cursor: pointer;
-  }
-
-  header.navbar nav.mobile-hide .close-nav {
-    display: none;
   }
 
   header.navbar button {

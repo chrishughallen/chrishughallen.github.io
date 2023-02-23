@@ -10,8 +10,6 @@ section.intro article {
   display: grid;
   grid-auto-flow: row;
   align-content: baseline;
-  height: 100vh;
-  min-height: 100vh;
   grid-row-gap: 1.5rem;
   justify-items: baseline;
 }
@@ -32,4 +30,10 @@ section.intro article h1 {
 p {
   line-height: 1.5rem;
   max-width: 90ch;
+}
+
+@media (max-width: 768px) {
+  section.intro article h1 {
+    font-size: 2rem;
+  }
 }
