@@ -1,6 +1,12 @@
 // Nav behavior
-const open_nav = () => nav.classList.remove("hide-mobile-content")
-const close_nav = () => nav.classList.add("hide-mobile-content")
+const open_nav = () => {
+  nav.classList.add("show-mobile-nav")
+  document.body.classList.add("mobile-menu-open")
+}
+const close_nav = () => {
+  nav.classList.remove("show-mobile-nav")
+  document.body.classList.remove("mobile-menu-open")
+}
 
 // elements
 nav = document.querySelector(".navbar")
