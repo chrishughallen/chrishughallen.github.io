@@ -4,15 +4,19 @@ header.navbar {
   padding: 1.25rem;
   width: 100%;
   top: 0;
-  border-bottom: 1px solid black;
-  background: black;
-  color: white;
+  background: #0a192f;
+  color: #64ffda;
   align-items: center;
   height: 5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
+a {
+  color: #64ffda;
+}
 header.navbar h1 a {
-  color: white;
   text-decoration: none;
   transition: opacity 100ms;
 }
@@ -43,7 +47,6 @@ header.navbar nav ul li.active-nav-link {
 
 header.navbar nav ul li a  {
   letter-spacing: 0.05em;
-  color: white;
   text-decoration: none;
   transition: opacity 100ms;
 }
@@ -75,6 +78,7 @@ header.navbar nav ul li a:hover {
   header.hide-mobile-content {
     height: 5rem;
     grid-template-rows: 1fr;
+    transition: height 100ms;
   }
 
   header.hide-mobile-content nav {
