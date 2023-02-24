@@ -104,10 +104,7 @@ main section {
   grid-column: 2;
   margin-top: -5rem;
   padding-top: 5rem;
-}
-
-main section article {
-  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 /* SECTION STYLES */
@@ -116,6 +113,10 @@ main section article {
 
 section.intro {
   height: calc(100vh - 5rem);
+}
+
+section.intro article {
+  margin-top: 5rem;
 }
 
 section.intro article {
@@ -241,6 +242,61 @@ section.work {
   height: calc(100vh - 5rem);
 }
 
+section.work article {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: baseline;
+  grid-gap: 5rem;
+}
+
+section.work article div:first-child {
+  border-right: 1px solid rgba(255,255,255,0.3);
+  padding: 0 3rem;
+}
+
+section.work article div blockquote {
+  font-size: 1.3rem;
+  display: block;
+  margin: 1em 0;
+}
+
+section.work article div span {
+  text-align: right;
+}
+
+section.work article div h1 {
+  font-size: 6rem;
+  margin-bottom: 3rem;
+}
+
+section.work article div h2 {
+  font-size: 4rem;
+}
+
+section.work article div p {
+  max-width: 80ch;
+  font-size: 1.3rem;
+  opacity: 0.5;
+  line-height: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+section.work article div details {
+  margin: 2rem 0;
+}
+
+section.work article div details div {
+  margin: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+section.work article div details div a {
+  display: block;
+  margin: 1rem 0;
+}
 /* UTILITY CLASSES */
 .opaque-title {
   opacity: 0.4;
