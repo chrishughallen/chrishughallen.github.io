@@ -1,7 +1,8 @@
 header.navbar {
+  height: 5rem;
   display: flex;
   justify-content: space-between;
-  padding: 1.25rem;
+  padding: 0 1.25rem;
   width: 100%;
   top: 0;
   background: #0a192f;
@@ -102,7 +103,7 @@ header.navbar nav ul li a:hover {
   header.navbar {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 5vh auto;
+    grid-template-rows: 5rem auto;
     transition: height 100ms;  
   }
 
