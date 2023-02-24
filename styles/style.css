@@ -26,17 +26,28 @@ body.mobile-menu-open {
   overflow: hidden;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+}
+
+.container header.navbar {
+  grid-column: 1 / 4;
+}
+
+.container main {
+  grid-column: 2;
+}
 
 
-@media (min-width: 900px) {
-  main {
-    grid-template-columns: 150px 1fr 150px;
-  }
 
-  main section {
-    padding: 0 100px;
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: 30px 1fr 30px;
   }
 }
+
+
 
 .opaque-title {
   opacity: 0.4;
@@ -88,55 +99,57 @@ a:hover {
 }
 
 /* MAIN STYLES */
-main {
-  display: grid;
-  grid-template-columns: 40px 1fr 40px;
-}
-
-main {
-  display: grid;
-  grid-template-columns: 20px 1fr 20px;
-}
 
 main section {
   grid-column: 2;
-  min-height: 100vh;
-  height: calc(100vh + 100px);
-  margin-top: -100px;
-  padding-top: 100px;
+  margin-top: -5rem;
+  padding-top: 5rem;
+}
+
+main section article {
+  margin-top: 5rem;
 }
 
 /* SECTION STYLES */
 
-
 /* INTRO SECTION STYLES */
 
 section.intro {
+  height: calc(100vh - 5rem);
+}
+
+section.intro article {
   display: grid;
   grid-template-columns: 3fr 2fr;
 }
 
-section.intro article span {
+section.intro article div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+section.intro article div span {
   opacity: 0;
   animation: fadeIn 500ms ease 0s 1 normal forwards;
 }
 
-section.intro article h1{
+section.intro article div h1{
   opacity: 0;
   animation: fadeIn 500ms ease 500ms 1 normal forwards;
 }
 
-section.intro article p {
+section.intro article div p {
   opacity: 0;
   animation: fadeIn 500ms ease 1s 1 normal forwards;
 }
 
-section.intro img {
+section.intro article img {
   opacity: 0;
   animation: fadeIn 500ms ease 2s 1 normal forwards;
 }
 
-section.intro article a button {
+section.intro article div a button {
   opacity: 0;
   animation: wobble 1s ease 2s 1 normal forwards;
 }
@@ -202,11 +215,9 @@ section.intro article a button {
 section.intro img {
   width: 100%;
   border-radius: 50%;
-  margin-top: 8rem;
 }
 
 section.intro article {
-  margin-top: 8rem;
   display: grid;
   grid-auto-flow: row;
   align-content: baseline;
@@ -223,6 +234,13 @@ section.intro article h1 {
   font-size: 4rem;
 }
 
+
+/* WORK SECTION STYLES */
+
+section.work {
+  height: calc(100vh - 5rem);
+}
+
 /* UTILITY CLASSES */
 .opaque-title {
   opacity: 0.4;
@@ -236,53 +254,20 @@ p {
 /* MOBILE STYLES */
 @media (max-width: 768px) {
 
-  section.intro {
+  main section.intro article {
     grid-template-columns: 1fr;
   }
 
-  section.intro img {
+  main section.intro article img {
     display: none;
   }
 
   /* INTRO SECTION */
-  section.intro article {
-    margin-top: 3rem;
-  }
 
-  section.intro article h1 {
+  section.intro article div h1 {
     font-size: 2rem;
   }
 }
 
 
 
-/* LEFT NAV */
-
-.menu i  {
-  margin-left: 10px;
-  margin-top: 10px;
-}
-
-#leftMenu {
-  height: 100vh;
-  position: fixed;
-  width: 0;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background: black;
-  overflow-x: hidden;
-  transition: .5s;
-}
-
-#leftNav {
-  margin-top: 100px;
-}
-
-#leftNav a {
-  margin-bottom: 15px;
-}
-
-#leftMenu a {
-  padding: 8px;
-}
