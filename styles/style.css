@@ -111,6 +111,100 @@ main section {
 
 /* INTRO SECTION STYLES */
 
+section.intro {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+section.intro article span {
+  opacity: 0;
+  animation: fadeIn 500ms ease 0s 1 normal forwards;
+}
+
+section.intro article h1{
+  opacity: 0;
+  animation: fadeIn 500ms ease 500ms 1 normal forwards;
+}
+
+section.intro article p {
+  opacity: 0;
+  animation: fadeIn 500ms ease 1s 1 normal forwards;
+}
+
+section.intro img {
+  opacity: 0;
+  animation: fadeIn 500ms ease 2s 1 normal forwards;
+}
+
+section.intro article a button {
+  opacity: 0;
+  animation: wobble 1s ease 2s 1 normal forwards;
+}
+
+@keyframes fadeIn {
+  20% {
+    opacity: 0.2
+  }
+
+	40% {
+		opacity: 0.4;
+	}
+
+  60% {
+    opacity: 0.6
+  }
+
+  80% {
+    opacity: 0.8
+  }
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes wobble {
+	0%,
+	100% {
+		transform: translateX(0%);
+		transform-origin: 50% 50%;
+	}
+
+	15% {
+    opacity: 0.2;
+		transform: translateX(-30px) rotate(-6deg);
+	}
+
+	30% {
+    opacity: 0.4;
+		transform: translateX(15px) rotate(6deg);
+	}
+
+	45% {
+    opacity: 0.6;
+		transform: translateX(-15px) rotate(-3.6deg);
+	}
+
+	60% {
+    opacity: 0.8;
+		transform: translateX(9px) rotate(2.4deg);
+	}
+
+	75% {
+		transform: translateX(-6px) rotate(-1.2deg);
+	}
+
+  100% {
+    opacity: 1;
+  }
+}
+
+section.intro img {
+  width: 100%;
+  border-radius: 50%;
+  margin-top: 8rem;
+}
+
 section.intro article {
   margin-top: 8rem;
   display: grid;
@@ -142,6 +236,14 @@ p {
 /* MOBILE STYLES */
 @media (max-width: 768px) {
 
+  section.intro {
+    grid-template-columns: 1fr;
+  }
+
+  section.intro img {
+    display: none;
+  }
+
   /* INTRO SECTION */
   section.intro article {
     margin-top: 3rem;
@@ -150,4 +252,37 @@ p {
   section.intro article h1 {
     font-size: 2rem;
   }
+}
+
+
+
+/* LEFT NAV */
+
+.menu i  {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+#leftMenu {
+  height: 100vh;
+  position: fixed;
+  width: 0;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: black;
+  overflow-x: hidden;
+  transition: .5s;
+}
+
+#leftNav {
+  margin-top: 100px;
+}
+
+#leftNav a {
+  margin-bottom: 15px;
+}
+
+#leftMenu a {
+  padding: 8px;
 }
