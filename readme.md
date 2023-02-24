@@ -6,6 +6,8 @@ I'm the front end developer at [Bergamotte](https://www.bergamotte.com) and I sp
 
 I am currently learning Python React, and taking the latest version of Harvard's CS-50 outside of my day job.
 
+Here is my new personal [website](https://chrishughallen.github.io/) that I'm currently working on
+
 My Current React Project
 
 [lorem-blog-posts](https://react-blog-posts.vercel.app/) - A basic fetch application that uses the JSONplaceholder API. Using localStorage you can favorite/unfavorite blog posts, as well as follow/unfollow users. I am currently working on implementing all the functionality before any major styling, so don't expect anything beautiful quite yet 😉
