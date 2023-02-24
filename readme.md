@@ -4,7 +4,7 @@ I'm Chris, an American web developer based in Paris.
 
 I'm the front end developer at [Bergamotte](https://www.bergamotte.com) and I spend most of my time working with Javascript, scss, and Ruby.
 
-I am currently learning Python React, and taking the latest version of Harvard's CS-50 outside of my day job.
+I am currently learning Python, React, and taking the latest version of Harvard's CS-50 outside of my day job.
 
 Here is my new personal [website](https://chrishughallen.github.io/) that I'm currently working on
 
