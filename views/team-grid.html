@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet the team</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+    
+    
+    .grid {
+      display: grid;
+      grid-template-columns: 6% 6% 6% 6% 6% 70%;
+      transition: 300ms;
+      height: 100vh;
+    }
+    
+    .grid:has(.home:hover) {
+      grid-template-columns: 70% 6% 6% 6% 6% 6%;
+    }
+    
+    .grid:has(.about:hover) {
+      grid-template-columns: 6% 70% 6% 6% 6% 6%;
+    }
+    
+    .grid:has(.design:hover) {
+      grid-template-columns: 6% 6% 70% 6% 6% 6%;
+    }
+    
+    .grid:has(.development:hover) {
+      grid-template-columns: 6% 6% 6% 70% 6% 6%;
+    }
+    
+    .grid:has(.contact:hover) {
+      grid-template-columns: 6% 6% 6% 6% 70% 6%;
+    }
+    
+    .grid:has(.col:hover) .auto-col {
+      opacity: 0;
+      transition: 100ms;
+    }
+    
+    .grid .col:hover h1 {
+      transform: rotate(0) translatex(0);
+      transition: 300ms;
+    }
+    
+    .grid .col:hover {
+      padding: 1.5rem;
+      animation: none;
+    }
+    
+    .grid .col:hover .col-inner {
+      opacity: 1;
+      transition: 2s;
+    }
+    
+    .grid .col:hover p {
+      opacity: 1;
+    }
+    
+    @keyframes myAnim {
+      0%,
+      50%,
+      100% {
+        opacity: 1;
+      }
+    
+      25%,
+      75% {
+        opacity: 0.3;
+      }
+    }
+
+    .home {
+      background: #f53b57;
+      animation: myAnim 5s ease 0.2s 1 normal forwards;
+    }
+    
+    .about {
+      background: #575fcf;
+      animation: myAnim 5s ease 0.4s 1 normal forwards;
+    }
+    
+    .design {
+      background: #05c46b;
+      animation: myAnim 5s ease 0.6s 1 normal forwards;
+    }
+    
+    .development {
+      background: #ffa801;
+      animation: myAnim 5s ease 0.8s 1 normal forwards;
+    }
+    
+    .contact {
+      background: #ffdd59;
+      animation: myAnim 5s ease 1s 1 normal forwards;
+    }
+    
+    .col {
+      display: flex;
+      flex-direction: column;
+      transition: 100ms;
+      gap: 3rem;
+    }
+    
+    .col:hover {
+      align-items: center;
+    }
+    
+    
+    .col .col-inner{
+      opacity: 0;
+      transition: 100ms;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .col .col-inner p {
+      max-width: 60ch;
+    }
+    
+    button {
+      outline: none;
+      padding: 1.5rem;
+      min-width: 100px;
+      background: #485460;
+      border: 1px solid #485460;
+      color: white;
+      transition: 300ms;
+    }
+    
+    button:hover {
+      background: transparent;
+      color: black;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+    
+    .col .col-inner img {
+      width: 300px;
+      border-radius: 50%;
+      display: block;
+      margin: 3rem 0;
+    }
+    
+    .col h1 {
+      transform: rotate(90deg) translateX(90px);
+      transition: 300ms;
+    }
+    
+    .auto-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }    
+  </style>
+
+</head>
+<body>
+  <div class="grid">
+    <div class="col home">
+      <h1>Angela</h1>
+      <div class="col-inner">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde libero at doloribus maiores architecto quidem ullam? Quia labore at nam voluptatem temporibus! Ducimus itaque facere nobis soluta ipsa illo molestiae?</p>
+        <img src="https://this-person-does-not-exist.com/img/avatar-1101d73f4c15eb865a8a30e9b418232f.jpg" alt="">
+        <button>Contact</button>
+      </div>
+    </div>
+    <div class="col about">
+      <h1>Michael</h1>
+      <div class="col-inner">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde libero at doloribus maiores architecto quidem ullam? Quia labore at nam voluptatem temporibus! Ducimus itaque facere nobis soluta ipsa illo molestiae?</p>
+        <img src="https://this-person-does-not-exist.com/img/avatar-11460c124466238b09bafc478624b900.jpg" alt="">
+        <button>Contact</button>
+      </div>
+    </div>
+    <div class="col design">
+      <h1>Jessica</h1>
+      <div class="col-inner">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde libero at doloribus maiores architecto quidem ullam? Quia labore at nam voluptatem temporibus! Ducimus itaque facere nobis soluta ipsa illo molestiae?</p>
+        <img src="https://this-person-does-not-exist.com/img/avatar-11171f6d3876307e8f381a077d42acd0.jpg" alt="">
+        <button>Contact</button>
+      </div>
+    </div>
+    <div class="col development">
+      <h1>Stephen</h1>
+      <div class="col-inner">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde libero at doloribus maiores architecto quidem ullam? Quia labore at nam voluptatem temporibus! Ducimus itaque facere nobis soluta ipsa illo molestiae?</p>
+        <img src="https://this-person-does-not-exist.com/img/avatar-11c2a0c43a142083dcfd5cd0ed91583c.jpg" alt="">
+        <button>Contact</button>
+      </div>
+    </div>
+    <div class="col contact">
+      <h1>Camille</h1>
+      <div class="col-inner">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde libero at doloribus maiores architecto quidem ullam? Quia labore at nam voluptatem temporibus! Ducimus itaque facere nobis soluta ipsa illo molestiae?</p>
+        <img src="https://this-person-does-not-exist.com/img/avatar-119205860743302fba3313c0086d917b.jpg" alt="">
+        <button>Contact</button>
+      </div>
+    </div>
+    <div class="auto-col">
+      <h1>Meet our team!</h1>
+    </div>
+  </div>
+  
+</body>
+</html>
