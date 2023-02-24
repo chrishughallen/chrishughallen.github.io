@@ -5,30 +5,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/nav.css">
-  <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="styles/buttons.css">
   <title>Chris Allen | Home</title>
 </head>
 <body>
-
+  <!-- NAV -->
   <header class="navbar">
     <h1>
-      <a href="index.html">{chrisHughAllen}</a>
+      <a href="#top">{chrisHughAllen}</a>
     </h1>
     <button id="close-nav" class="icon close-nav"><i class="fa fa-solid fa-arrow-left"></i></button>
     <button id="open-nav" class="icon open-nav"><i class="fa fa-solid fa-bars"></i></button>
     <nav id="nav">
       <ul>
-        <li class="active-nav-link"><a href="index.html">home</a></li>
-        <li><a href="views/about.html">about</a></li>
-        <li><a href="views/work.html">work</a></li>
-        <li><a href="views/contact.html">contact</a></li>
+        <li><a href="#top">home</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#work">work</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <!-- TOP SECTION -->
     <section id="top" class="intro">
       <article>
         <span>Hi, my name is</span>
@@ -36,12 +35,27 @@
         <h1 class="opaque-title">I build web sites and applications.</h1>
         <p>I'm a software engineer specializing in front end web development. I have over 4 years of experience working on e-commerce websites, personal projects and web applications. I am currently the front end developer at <a target="_blank" href="https://www.bergamotte.com">Bergamotte.</a></p>
         <p>I am an American but I have called Paris home since 2018.</p>
-        <a href="views/work.html">
+        <a href="#work">
           <button class="btn btn-primary">Check out some of my projects!</button>
         </a>
       </article>
-  </section>
+    </section>
 
+    <section id="about" class="about">
+      <h1>About</h1>
+    </section>
+
+    <section id="work" class="work">
+      <h1>Work</h1>
+      <ul>
+        <li><a target="_blank" href="views/todo.html">Todo list</a></li>
+        <li><a target="_blank" href="views/blackjack.html">Blackjack</a></li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact">
+      <h1>Contact</h1>
+    </section>
     <!-- NERDY CODE INTRODUCTION SECTION -->
     <!-- <section>
       <article>
