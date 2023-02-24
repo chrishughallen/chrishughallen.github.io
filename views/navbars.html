@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbars</title>
+
+  <style>
+    /* LEFT NAV */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    section {
+      height: 100vh;
+      position: relative;
+    }
+
+    .menu i  {
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+
+    .menu i:hover {
+      cursor: pointer;
+    }
+
+    #leftMenu {
+      height: 100vh;
+      position: fixed;
+      width: 0;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background: black;
+      overflow-x: hidden;
+      transition: .5s;
+    }
+
+    #leftMenu a {
+      color: white;
+      text-decoration: none;
+    }
+
+    #leftNav {
+      margin-top: 100px;
+    }
+
+    #leftNav a {
+      margin-bottom: 15px;
+    }
+
+    #leftMenu a {
+      padding: 8px;
+    }
+
+    .leftNav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .leftNav a {
+      color: white;
+    }
+
+    section h1 {
+      text-align: center;
+    }
+
+    section img {
+      width: 50rem;
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <div id="leftMenu" class="left-menu">
+      <a href="#" onclick="closeBtn()">X</a>
+      <nav class="leftNav">
+        <a href="#">home</a>
+        <a href="#">about</a>
+        <a href="#">work</a>
+        <a href="#">contact</a>
+      </nav>
+    </div>
+    <span class="menu" onclick="openBtn()">
+      <i class="fa fa-solid fa-bars"></i>
+    </span>
+    <h1>Left slide in menu</h1>
+  </section>
+
+  
+
+  <script src="https://kit.fontawesome.com/b2f7c419d3.js" crossorigin="anonymous"></script>
+  <script>
+    // LEFT MENU
+    function openBtn() {
+      document.getElementById("leftMenu").style.width = "50%"
+    }
+
+    function closeBtn() {
+      document.getElementById("leftMenu").style.width = "0"
+    }
+  </script>
+</body>
+</html>

@@ -23,3 +23,4 @@ close_nav_button.addEventListener("click", close_nav)
 links.forEach((link) => {
   link.addEventListener("click", close_nav)
 })
+
