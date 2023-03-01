@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    min-height: 100vh;
+    grid-template-rows: 1fr auto;
+  }
+
+  .grid main {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid main .cookies-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .grid main .cookies-overlay.hide {
+    display: none;
+  }
+  
+  .grid main .cookies-overlay article {
+    background: white;
+    padding: 3rem;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .grid main .cookies-overlay article section {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+
+
+  .grid footer {
+    opacity: 0;
+    animation: popin 1s ease 2s 1 normal forwards;
+    position: sticky;
+    bottom: 0;
+    padding: 3rem;
+    grid-column: 1 / 4;
+    border-top: 1px solid black;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .grid footer article {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  a {
+    color: #1600eb;
+  }
+
+  .btn {
+    padding: 15px 30px;
+    border-radius: 100px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    min-width: 150px;
+    justify-content: center;
+    border: none;
+    transition: 150ms;
+  }
+
+  .btn:hover {
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: #4633ff;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #1600eb;
+  }
+
+  .btn-secondary {
+    border: 1px solid #4633ff;
+    background: transparent;
+    color: #4633ff;
+  }
+
+  .btn-secondary:hover {
+    border: 1px solid #1600eb;
+    color: #1600eb;
+  }
+
+  @keyframes popin {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+</style>
+<body>
+  <div class="grid">
+    <main>
+      <h1>Cookies!</h1>
+      <p>Here is a simple example of a cookies bar that allows a user to accept, deny, or make custom preferences to their selection.</p>
+      <div id="cookies-overlay" class="cookies-overlay hide">
+        <article>
+          <h1>Privacy Preference Center</h1>
+          <p>When you visit websites, they may store or retrieve data in your browser. This storage is often necessary for the basic functionality of the website. The storage may be used for marketing, analytics, and personalization of the site, such as storing your preferences. Privacy is important to us, so you have the option of disabling certain types of storage that may not be necessary for the basic functioning of the website. Blocking categories may impact your experience on the website.</p>
+          <section>
+            <button onlcick="acceptCookies()" class="btn btn-primary">Accept all cookies</button>
+            <button onclick="denyCookies()" class="btn btn-secondary">Deny</button>
+          </section>
+        </article>
+      </div>
+    </main>
+    <footer id="cookie-bar">
+      <p>By clicking “Accept", you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts. View our <a href="#">Privacy Policy</a> for more information. This is not a real cookie policy. It's just to show an example of a cookie bar!</p>
+      <article>
+        <a onclick="showCookiePreferences()" href="#">Preferences</a>
+        <button onclick="acceptCookies()" class="btn btn-primary">Accept</button>
+        <button onclick="denyCookies()" class="btn btn-secondary">Deny</button>
+      </article>
+    </footer>
+  </div>
+</body>
+
+<script>
+  const showCookiePreferences = () => {
+    document.getElementById("cookies-overlay").classList.remove('hide')
+    document.getElementById("cookie-bar").style.display = "none"
+  }
+
+  const hideCookiePreferences = () => {
+    document.getElementById("cookies-overlay").classList.add('hide')
+  }
+
+  const acceptCookies = () => {
+    console.log("Cookies accepted!")
+    document.getElementById("cookie-bar").style.display = "none"
+    hideCookiePreferences()
+  }
+
+  const denyCookies = () => {
+    console.log("Cookies denied!")
+    document.getElementById("cookie-bar").style.display = "none"
+    hideCookiePreferences()
+  }
+</script>
+</html>
