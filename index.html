@@ -8,11 +8,23 @@
   <title>Chris Allen</title>
 </head>
 <body>
-  <div class="container">
+  <header class="fun header">
+    <form action="">
+      <label for="theme-select">Select a theme</label>
+      <select name="theme-select" id="theme-select">
+        <option value="fun">Fun</option>
+        <option value="dark">Dark</option>
+        <option value="professional">Professional</option>
+        <option value="minimalist">Minimalist</option>
+        <option value="none">No CSS</option>
+      </select>
+    </form>
+  </header>
+  <div class="container fun">
     <main>
       <section id="top" class="top">
         <h1 class="big-title">Hello world!</h1>
-        <p class="big-paragraph">I'm <span class="black-text">Chris</span>, and I'm a web developer. I like keeping things simple yet bold, and helping users have a cool, smooth, and delightful web experience.</p>
+        <p class="big-paragraph">I'm Chris, and I'm a web developer. I like keeping things simple yet bold, and helping users have a cool, smooth, and delightful web experience.</p>
         <a href="#about" class="hover-grow flashing-link">ABOUT ME</a>
         <a href="#work" class="hover-grow flashing-link">MY WORK</a>
         <a href="#contact" class="hover-grow flashing-link">CONTACT ME</a>
@@ -36,6 +48,17 @@
       </section>
     </main>
   </div>
-  
+
+  <script>
+    const select = document.getElementById("theme-select")
+    const container = document.querySelector(".container")
+    const header = document.querySelector(".header")
+    select.addEventListener('change', (e) => {
+      container.className = "container"
+      header.className = "header"
+      container.classList.add(e.currentTarget.value)
+      header.classList.add(e.currentTarget.value)
+    })
+  </script>
 </body>
 </html>

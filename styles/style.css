@@ -19,19 +19,57 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  height: 5rem;
+  width: 100%;
+  
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 40px;
+}
+
+header.fun {
+  background: var(--dark-orange-color);
+}
+
+header.dark {
+  background: black;
+  color: white;
+  border-bottom: 2px solid rgba(255,255,255,0.5);
+}
+
+header form {
+  padding: 0.5rem;
+  border: 1px solid white;
+  display: flex;
+  gap: 1rem;
+}
+
+header label {
+  color: white;
+}
+
+header select {
+  width: 150px;
 }
 
 .container {
   display: grid;
   grid-template-columns: 10% 1fr 10%;
-  position: relative;
+  margin-top: 5rem;
 }
 
 main {
   grid-column: 1  / 4;
 }
 
-section {
+.container section {
   min-height: 100vh;
   padding: 0 40px;
   padding-top: 3rem;
@@ -39,47 +77,61 @@ section {
   flex-direction: column;
   align-items: baseline;
   gap: 1rem;
-}
+} 
 
-section.top,
-section.work {
+.container.fun section.top,
+.container.fun section.work {
   background: var(--light-orange-color);
-
 }
 
-@media(min-width: 700px) {
-  section a {
-    align-self; flex-end;
-  }
+.container.dark section {
+  background: black;
 }
 
-.big-title {
+.container .big-title {
   font-size: var(--big-title-font);
   font-family: var(--warp-font-family);
+}
+
+.container.fun .big-title {
   color: var(--dark-orange-color);
 }
 
-.big-paragraph {
+.container.dark .big-title {
+  color: #fff;
+}
+
+.container .big-paragraph {
   font-size: var(--big-text-font);
   font-family: var(--warp-font-family);
-  color: var(--dark-orange-color);
   transition: var(--transition-ease);
   margin-bottom: 1.5rem;
 }
 
-.black-text {
-  color: var(--black-color);
+.container.fun .big-paragraph {
+  color: var(--dark-orange-color);
 }
 
-.flashing-link {
+.container.dark .big-paragraph {
+  color: white;
+}
+
+.container .flashing-link {
   animation: flashing-link 3s infinite;
   font-size: var(--big-text-font);
   font-family: var(--warp-font-family);
-  color: var(--dark-orange-color);
   transition: var(--transition-ease)
 }
 
-.hover-grow:hover {
+.container.fun .flashing-link {
+  color: var(--dark-orange-color);
+}
+
+.container.dark .flashing-link {
+  color: white;
+}
+
+.container .hover-grow:hover {
   transform: scale(1.1);
   animation: none;
 }
