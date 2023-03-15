@@ -4,100 +4,38 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/nav.css">
   <link rel="stylesheet" href="styles/style.css">
-  <title>Chris Allen | Home</title>
+  <title>Chris Allen</title>
 </head>
 <body>
   <div class="container">
-    <!-- NAV -->
-    <header class="navbar">
-      <h1>
-        <a href="#top">{chrisHughAllen}</a>
-      </h1>
-      <button id="close-nav" class="icon close-nav"><i class="fa fa-solid fa-arrow-left"></i></button>
-      <button id="open-nav" class="icon open-nav"><i class="fa fa-solid fa-bars"></i></button>
-      <nav id="nav">
-        <ul>
-          <li><a href="#work">work</a></li>
-        </ul>
-      </nav>
-    </header>
-
     <main>
-      <!-- TOP SECTION -->
-      <section id="top" class="intro">
-        <article>
-          <div>
-            <span>Hi, my name is</span>
-            <h1>Christopher Allen.</h1>
-            <h1 class="opaque-title">I build web sites and applications.</h1>
-            <p>I'm a software engineer specializing in front end web development. I have over 4 years of experience working on e-commerce websites, personal projects and web applications. I am currently the front end developer at <a target="_blank" href="https://www.bergamotte.com">Bergamotte.</a></p>
-            <p>I am an American but I have called Paris home since 2018.</p>
-            <a href="#work">
-              <button class="btn btn-primary">Check out some of my projects!</button>
-            </a>
-          </div>
-          <img src="assets/images/me.jpeg" alt="">
-        </article>
+      <section id="top" class="top">
+        <h1 class="big-title">Hello world!</h1>
+        <p class="big-paragraph">I'm <span class="black-text">Chris</span>, and I'm a web developer. I like keeping things simple yet bold, and helping users have a cool, smooth, and delightful web experience.</p>
+        <a href="#about" class="hover-grow flashing-link">ABOUT ME</a>
+        <a href="#work" class="hover-grow flashing-link">MY WORK</a>
+        <a href="#contact" class="hover-grow flashing-link">CONTACT ME</a>
       </section>
-
+      
+      <section id="about" class="about">
+        <h1 class="big-title">About Me</h1>
+        <p class="big-paragraph">I'm American but based in Paris, FR. I am currently a full time front end developer for Bergamotte. In my spare time I enjoy playing guitar, traveling, rock climbing, and creating digital projects.</p>
+        <a href="#work" class="hover-grow flashing-link">MY WORK</a>
+      </section>
+      
       <section id="work" class="work">
-        <article>
-          <div>
-            <h1>work</h1>
-            <p>My day job consists of maintaining the front end of <a href="https://www.bergamotte.com">bergamotte.com</a></p>
-            <p>In my free time I enjoy learning as much as I can about best practices in HTML, CSS, and Javascript.</p>
-            <p>I think having an expertise of the core of these languages goes a long way in todays world.</p> 
-            <p>While I also enjoy working with frameworks such as React, and libraries like jQuery, I spend a lot of time building projects without them.</p>
-            <blockquote>
-              "Simplicity is the ultimate sophistication"
-              <span>- Leonardo Da Vinci</span>
-            </blockquote>
-          </div>
-          <div>
-            <h1>examples</h1>
-            <details>
-              <summary>Todo list</summary>
-              <div>
-                <p>The tried and true entry level project of any good developer, right? This one takes advantage of local storage for a continued user experience!</p>
-                <a target="_blank" href="views/todo.html">View application</a>
-                <a target="_blank" href="views/todo.html">View source code</a>
-              </div>
-            </details>
-
-            <details>
-              <summary>Blackjack</summary>
-              <div>
-                <p>This is your class blackjack card game, with betting included! I had fun building this project and dealing with side effects like giving an ace a value of 1 or 11, and determining how the dealer should play. I eventually plan to incorporate a basic strategy bot to give you tips throughout your gameplay. No real money required ;)</p>
-                <a target="_blank" href="views/blackjack.html">View application</a>
-                <a target="_blank" href="views/todo.html">View source code</a>
-              </div>
-            </details>
-
-            <details>
-              <summary>Components</summary>
-              <div>
-                <p>Here I wanted to feature some simple but useful componets I've created from scratch. These are the kind of thing every website uses, and I enjoy building them in different ways. My thought process is if it can be done with just CSS and no Javascript, go that route! I only bring in javascript once it's absoloutely necessary.</p>
-                <a target="_blank" href="views/navbars.html">Sliding navbar</a>
-              </div>
-            </details>
-
-            <details>
-              <summary>Pages</summary>
-              <div>Here are a few full page examples of the things I like to do with CSS</div>
-              <a target="_blank" href="views/team-grid.html">Animated team grid</a>
-            </details>
-          </div>
-        </article>
+        <h1 class="big-title">My Work</h1>
+        <p class="big-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi porro, dignissimos, rem nesciunt earum accusamus, magnam dicta numquam nemo quae recusandae tenetur ipsam rerum quasi aperiam necessitatibus ratione commodi cupiditate!</p>
+        <a href="#contact" class="hover-grow flashing-link">CONTACT ME</a>
+      </section>
+      
+      <section id="contact" class="contact">
+        <h1 class="big-title">Contact Me</h1>
+        <p class="big-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi porro, dignissimos, rem nesciunt earum accusamus, magnam dicta numquam nemo quae recusandae tenetur ipsam rerum quasi aperiam necessitatibus ratione commodi cupiditate!</p>
       </section>
     </main>
   </div>
-
-
-
-  <script src="https://kit.fontawesome.com/b2f7c419d3.js" crossorigin="anonymous"></script>
-  <script src="javascript/nav.js"></script>
-  <script  src="/javascript/main.js"></script>
+  
 </body>
 </html>
