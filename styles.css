@@ -8,6 +8,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100svh;
+  font-family: 'Noto sans', sans-serif;
 }
 
 main {
@@ -22,6 +23,6 @@ main {
 
 footer {
   padding: 1rem;
-  background: lightgray;
+  background: white;
   text-align: center;
 }

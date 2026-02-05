@@ -1,24 +1,51 @@
 header {
-  background: lightgrey;
+  background: #06402b;
   display: grid;
   grid-template-rows: 4rem;
-  position: relative;
+  position: sticky;
+  top: 0;
 
   @media(min-width: 768px) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #f9f7f2;
   }
 
   nav {
+    a {
+      color: #f9f7f2;
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f9f7f2;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.2s ease-out;
+    }
+
+    a:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
     &:not(.nav-links) {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid #f9f7f2;
       padding: 1rem;
       z-index: 1;
-      background: lightgrey;
+      background: #06402b;
 
       @media(min-width: 768px) {
         border-bottom: none;
@@ -39,7 +66,7 @@ header {
         .line {
           width: 30px;
           height: 3px;
-          background: black;
+          background: #f9f7f2;
           transition: transform 0.2s ease-in-out;
         }
 
@@ -64,7 +91,7 @@ header {
       position: absolute;
       top: -100vh;
       height: calc(100svh - 4rem);
-      background: lightgrey;
+      background: #06402b;
       width: 100%;
       padding: 1rem;
       transition: top 0.3s ease-in-out, right 0.3s ease-in-out;
