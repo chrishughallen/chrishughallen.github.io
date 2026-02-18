@@ -1,5 +1,5 @@
 header {
-  background: #06402b;
+  background: #266DD3;
   display: grid;
   grid-template-rows: 4rem;
   position: sticky;
@@ -45,7 +45,7 @@ header {
       border-bottom: 1px solid #f9f7f2;
       padding: 1rem;
       z-index: 1;
-      background: #06402b;
+      background: #266DD3;
 
       @media(min-width: 768px) {
         border-bottom: none;
@@ -91,7 +91,7 @@ header {
       position: absolute;
       top: -100vh;
       height: calc(100svh - 4rem);
-      background: #06402b;
+      background: #266DD3;
       width: 100%;
       padding: 1rem;
       transition: top 0.3s ease-in-out, right 0.3s ease-in-out;
