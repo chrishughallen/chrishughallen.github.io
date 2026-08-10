@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    color: black;
+}
+
+body {
+    background: #031927;
+}
+
+main {
+  /* Prevent content from hugging the screen edges on mobile */
+  padding-inline: max(1rem, 5vw);
+  
+  /* Clear the header/navbar and add top breathing room */
+  padding-block-start: clamp(2rem, 5vw, 4rem);
+  
+  /* Bottom padding to prevent awkward scroll cutoffs */
+  padding-block-end: clamp(2rem, 5vw, 4rem);
+
+  /* Center the container and cap maximum content width */
+  max-width: 1200px;
+  margin-inline: auto;
+  
+  /* Ensure main takes full width within bounds */
+  width: 100%;
+}
+
+h1 {
+    font-family: "Archivo Black", sans-serif;
+    color: #247BA0;
+}
+
+
+section {
+    display: grid;
+    gap: 1rem;
+    color: white;
+    padding: 2rem;
+}

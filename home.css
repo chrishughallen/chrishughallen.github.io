@@ -1,0 +1,34 @@
+.hero {
+    display: grid;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+
+        @media (min-width: 768px) {
+            width: 75%;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+    }
+    h1 {
+        @media (min-width: 768px) {
+            font-size: 5rem;
+        }
+    }
+
+    a {
+        color: #247BA0;
+    }
+
+    p {
+        line-height: 1.5;
+        letter-spacing: 0.5px;
+        font-size: 1.25rem;
+    }
+}

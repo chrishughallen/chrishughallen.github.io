@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="home.css">
+    <title>Christopher Allen | Home</title>
+</head>
+<body>
+    <header>
+        <nav>
+          <a href="index.html" aria-current="page" class="brand">Christopher Allen</a>
+        </nav>
+
+        <button onclick="toggleNav()" class="menu-toggle" aria-label="Toggle menu">
+            <img src="menu.svg" alt="Menu icon" />
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+            <ul>
+                <li>
+                    <a href="writing.html">Writing</a>
+                </li>
+                <li>
+                    <a href="music.html">Music</a>
+                </li>
+                <li>
+                    <a href="recipes.html">Recipes</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        <button class="btn">Contact</button>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article class="hero">
+            <section>
+                <h1>Hey, I'm Chris!</h1>
+                <h2>Product design engineer, musician, expat, and wannabe chef.</h2>
+                <p>This is my personal site to document my <a href="writing.html">thoughts</a>, share my <a href="music.html">music</a>, and highlight <a href="recipes.html">recipes</a> I've created or elaborated on.</p>
+            </section>
+            <img src="me.jpg" alt="Christopher Allen" class="hero-image" />
+        </article>
+    </main>
+
+    <script src="app.js"></script>
+    
+</body>
+</html>
